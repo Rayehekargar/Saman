@@ -1,0 +1,38 @@
+.experience-form {
+    border: 1px solid #ddd;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    padding: 10px;
+  }
+  
+  .experience-form .field {
+    margin-bottom: 8px;
+  }
+  
+  .experience-form .field input {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .experience-form .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  
+  .experience-form .delete-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .experience-form .delete-button:hover {
+    background-color: #c0392b;
+  }
+  
