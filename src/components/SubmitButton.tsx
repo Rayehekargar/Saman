@@ -1,6 +1,5 @@
 import React from 'react';
 import '../shared/SubmitButton.css'
-import { Check } from "react-feather"
 interface SubmitButtonProps {
 
   isDisabled: boolean;
@@ -10,7 +9,7 @@ interface SubmitButtonProps {
 const SubmitButton: React.FC<SubmitButtonProps> = ({isDisabled ,type}) => {
   return (
     <button type={type} className="submit-button"  disabled={isDisabled}>
-      Submit
+        ثبت
     </button>
   );
 };

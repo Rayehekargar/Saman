@@ -75,7 +75,7 @@ width: 90%;
 
 /* استایل برای دکمه ارسال */
 .user-info-form button[type="submit"] {
-  width: 30%;
+  width: 20%;
   padding: 12px;
   background-color: #28a745;
   border: none;
@@ -163,7 +163,7 @@ width: 90%;
 }
 .div-heaer-user{
   background-color: #e4d9d7;
-  padding:15px 2px 15px 2px;
+  padding:15px 4px 15px 4px;
   width: 100%;
   margin-bottom: 20px;
 }
@@ -173,7 +173,7 @@ margin-right: 10px;
 }
 .div-heaer-experience{
   background-color: #e4d9d7;
-  padding:15px 2px 15px 2px;
+  padding:15px 4px 15px 4px;
   width: 100%;
   margin-bottom: 20px;
   margin-top: 20px;

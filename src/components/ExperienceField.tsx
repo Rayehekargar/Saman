@@ -26,7 +26,7 @@ const ExperienceForm: React.FC<ExperienceFormProps> = ({ index, remove }) => {
         <input 
           {...register(roleName, { required: 'Role is required' })} 
           type="text" 
-          placeholder="Experience Title" 
+          placeholder="عنوان شغلی" 
         />
         {roleError && <span className="error-message">{roleError.message}</span>}
       </div>
@@ -34,7 +34,7 @@ const ExperienceForm: React.FC<ExperienceFormProps> = ({ index, remove }) => {
       <div className="field">
         <input 
           {...register(durationName, { required: 'Duration is required' })} 
-          placeholder="Duration (months)" 
+          placeholder="مدت(ماه)" 
           type="text" 
           pattern="[0-9]*"
           onKeyDown={(e) => {

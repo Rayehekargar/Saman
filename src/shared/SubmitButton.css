@@ -16,4 +16,9 @@
   .submit-button:hover:not(:disabled) {
     background-color: #2980b9;
   }
+  .submit-button{
+    svg{
+        margin-left: 10px;
+    }
+  }
   
