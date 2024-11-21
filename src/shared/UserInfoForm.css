@@ -20,7 +20,7 @@ body{
   color: #333;
 }
 
-/* استایل برای برچسب‌های فرم */
+
 .user-info-form label {
   font-size: 14px;
   font-weight: 600;
@@ -29,7 +29,7 @@ body{
   display: block;
 }
 
-/* استایل برای فیلدهای ورودی */
+
 .user-info-form input[type="text"],
 .user-info-form input[type="email"],
 .user-info-form input[type="tel"],
@@ -44,7 +44,7 @@ body{
 width: 90%;
 }
 
-/* تغییر رنگ فیلدها هنگام فوکوس */
+
 .user-info-form input[type="text"]:focus,
 .user-info-form input[type="email"]:focus,
 .user-info-form input[type="tel"]:focus,
@@ -53,7 +53,7 @@ width: 90%;
   outline: none;
 }
 
-/* استایل برای فیلدهای خطا */
+
 .user-info-form .error-message {
   color: red;
   font-size: 12px;
@@ -61,7 +61,7 @@ width: 90%;
   display: block;
 }
 
-/* استایل برای گروه‌های رادیویی */
+
 .radio-group {
   margin-bottom: 15px;
   display: flex;
@@ -73,7 +73,7 @@ width: 90%;
   margin-right: 10px;
 }
 
-/* استایل برای دکمه ارسال */
+
 .user-info-form button[type="submit"] {
   width: 20%;
   padding: 12px;

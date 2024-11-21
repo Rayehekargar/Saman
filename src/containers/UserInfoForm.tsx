@@ -33,16 +33,16 @@ const UserInfoForm: React.FC<UserInfoFormProps> = () => {
   >("email");
 
   const schema = Yup.object().shape({
-    firstName: Yup.string().required("First name is required"),
-    lastName: Yup.string().required("Last name is required"),
+    firstName: Yup.string().required("لطفا نام را وارد نمایید"),
+    lastName: Yup.string().required("لطفا نام خانوادگی را وارد نمایید"),
     preferredContactMethod: Yup.string()
       .oneOf(["email", "phone"])
       .required("Preferred contact method is required"),
     email: Yup.string()
-      .email("Invalid email")
+      .email("فرمت ایمیل وارد شده اشتباه است")
       .when("preferredContactMethod", {
         is: "email",
-        then: Yup.string().required("Email is required"),
+        then: Yup.string().required("لطفا ایمیل را وارد نمایید"),
         otherwise: Yup.string().notRequired(),
       }),
     phone: Yup.string()
@@ -50,15 +50,15 @@ const UserInfoForm: React.FC<UserInfoFormProps> = () => {
       .when("preferredContactMethod", {
         is: "phone",
         then: Yup.string()
-          .required("Phone number is required")
-          .matches(/^\d{11}$/, "Phone number must be 11 digits"),
+          .required("لطفا شماره تلفن را وارد نمایید")
+          .matches(/^\d{11}$/, "شماره تلفن باید 11 رقم باشد"),
         otherwise: Yup.string().notRequired(),
       }),
       address: Yup.string().notRequired(),
     experiences: Yup.array().of(
       Yup.object().shape({
-        role: Yup.string().required("Role is required"),
-        duration: Yup.string().required("Duration is required"),
+        role: Yup.string().required("لطفا عنوان شغلی را وارد نمایید"),
+        duration: Yup.string().required("لطفا مدت را وارد نمایید"),
       })
     ),
   });
@@ -135,7 +135,7 @@ const UserInfoForm: React.FC<UserInfoFormProps> = () => {
         />
 
         <div className="preferedContact">
-          <h4> انتخاب روش تماس</h4>
+          <h3> انتخاب روش تماس</h3>
           <Controller
             name="preferredContactMethod"
             control={control}
