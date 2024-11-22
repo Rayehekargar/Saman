@@ -15,7 +15,8 @@ import { Plus } from "react-feather";
 import { User } from "react-feather";
 import { Briefcase } from "react-feather";
 import {fa} from '../../shared/i18n/fa'
-import Modal from '../../components/Modal/Modal';
+import DeleteModal from '../../components/DeleteModal/DeleteModal';
+import SuccessModal from "../../components/SuccessModal/SuccessModal";
 
 interface UserInfoFormProps {}
 
@@ -37,6 +38,7 @@ const UserInfoForm: React.FC<UserInfoFormProps> = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedExperienceIndex, setSelectedExperienceIndex] = useState<number | null>(null);
   const [selectedRole,setSelectedRole]=useState<string | null>(null);
+  const [isSuccessModalOpen, setSuccessModalOpen] = useState(false);
 
   const schema = Yup.object().shape({
     firstName: Yup.string().required(fa.containers.userInfoForm.firstNameRequired),
@@ -121,6 +123,7 @@ const UserInfoForm: React.FC<UserInfoFormProps> = () => {
     setModalOpen(true); 
   };
   const closeModal = () => setModalOpen(false);
+
   const handleConfirmDelete = () => {
     if (selectedExperienceIndex !== null) {
       remove(selectedExperienceIndex);
@@ -129,18 +132,26 @@ const UserInfoForm: React.FC<UserInfoFormProps> = () => {
   };
   const onSubmit = (data: any) => {
     console.log(data);
+    setSuccessModalOpen(true);
   };
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} className="user-info-form">
 
-      <Modal
+      <DeleteModal
         isOpen={isModalOpen}
         title={fa.components.modal.confirmDeleteTitle}
-        message={`${fa.components.modal.confirmDeleteMessage} ${selectedRole || ''}؟`}
+        message={`${fa.components.modal.confirmDeleteMessage} "${selectedRole || ''}"؟`}
         onConfirm={handleConfirmDelete}
         onCancel={closeModal}
       />
+
+       <SuccessModal
+          isOpen={isSuccessModalOpen}
+          title={fa.components.successModal.successfulRegistration}
+          message={fa.components.successModal.successfullyRegistered}
+          onClose={() => setSuccessModalOpen(false)}
+        />
 
         <div className="div-heaer-user"> 
         <User size={16} color="#4A5568" />

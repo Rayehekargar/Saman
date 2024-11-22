@@ -1,5 +1,5 @@
 import React from 'react';
-import './Modal.css';
+import './DeleteModal.css';
 import {fa} from '../../shared/i18n/fa'
 
 interface ModalProps {
@@ -10,7 +10,7 @@ interface ModalProps {
   onCancel: () => void;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, title, message, onConfirm, onCancel }) => {
+const DeleteModal: React.FC<ModalProps> = ({ isOpen, title, message, onConfirm, onCancel }) => {
   if (!isOpen) return null;
 
   return (
@@ -31,4 +31,4 @@ const Modal: React.FC<ModalProps> = ({ isOpen, title, message, onConfirm, onCanc
   );
 };
 
-export default Modal;
+export default DeleteModal;
