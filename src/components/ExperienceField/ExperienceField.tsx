@@ -1,6 +1,7 @@
 import React from 'react';
-import { useFormContext, FieldError } from 'react-hook-form';
-import '../shared/ExperienceForm.css'
+import { useFormContext } from 'react-hook-form';
+import { fa } from '../../shared/i18n/fa'
+import './ExperienceForm.css'
 
 interface ExperienceFormProps {
   index: number;
@@ -26,7 +27,7 @@ const ExperienceForm: React.FC<ExperienceFormProps> = ({ index, remove }) => {
         <input 
           {...register(roleName, { required: 'Role is required' })} 
           type="text" 
-          placeholder="عنوان شغلی" 
+          placeholder={fa.components.experienceField.jobTitle}
         />
         {roleError && <span className="error-message">{roleError.message}</span>}
       </div>
@@ -34,7 +35,7 @@ const ExperienceForm: React.FC<ExperienceFormProps> = ({ index, remove }) => {
       <div className="field">
         <input 
           {...register(durationName, { required: 'Duration is required' })} 
-          placeholder="مدت(ماه)" 
+          placeholder={fa.components.experienceField.duration}
           type="text" 
           pattern="[0-9]*"
           onKeyDown={(e) => {
@@ -46,7 +47,7 @@ const ExperienceForm: React.FC<ExperienceFormProps> = ({ index, remove }) => {
         {durationError && <span className="error-message">{durationError.message}</span>}
       </div>
 
-      <button type="button" onClick={remove} className="delete-button">Delete</button>
+      <button type="button" onClick={() => remove()} className="delete-button">{fa.components.experienceField.delete}</button>
     </div>
   );
 };

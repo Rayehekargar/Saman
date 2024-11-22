@@ -1,6 +1,6 @@
 
 
-import UserInfoForm from './containers/UserInfoForm';
+import UserInfoForm from './containers/UserInfoForm/UserInfoForm';
 function App() {
   return (
     <div>

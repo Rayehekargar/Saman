@@ -1,5 +1,6 @@
 import React from 'react';
-import '../shared/SubmitButton.css'
+import {fa} from '../../shared/i18n/fa'
+import './SubmitButton.css'
 interface SubmitButtonProps {
 
   isDisabled: boolean;
@@ -9,7 +10,7 @@ interface SubmitButtonProps {
 const SubmitButton: React.FC<SubmitButtonProps> = ({isDisabled ,type}) => {
   return (
     <button type={type} className="submit-button"  disabled={isDisabled}>
-        ثبت
+        {fa.components.submitButton.submit}
     </button>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FieldError, UseFormRegister, ValidationRule } from 'react-hook-form';
-import '../shared/InputField.css'
+import './InputField.css'
 interface InputFieldProps {
   label: string;
   name: string;
